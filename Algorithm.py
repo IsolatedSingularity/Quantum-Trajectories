@@ -1,6 +1,36 @@
 # Listing 1: Simulation Parameters
 import numpy as np
 
+# Additional imports for TensorFlow
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import SimpleRNN, Dense
+from tensorflow.keras.optimizers import Adam
+
+# Listing 11: Creating and training the Recurrent Neural Network (RNN)
+# Define the RNN model
+model = Sequential()
+model.add(SimpleRNN(64, return_sequences=True, input_shape=(mesh_size, 1)))
+model.add(Dense(mesh_size, activation='linear'))
+
+# Compile the model
+model.compile(loss='mean_squared_error', optimizer=Adam(lr=0.001))
+
+# Reshape Psi for training
+Psi_reshaped = Psi.reshape((time_steps, mesh_size, 1))
+
+# Train the RNN model
+model.fit(Psi_reshaped[:-1], Psi_reshaped[1:], epochs=10, verbose=1)
+
+# Generate Psi using the trained RNN
+predicted_Psi = model.predict(Psi_reshaped[:-1])
+
+# Reshape the predicted_Psi back to its original shape
+predicted_Psi = predicted_Psi.reshape((time_steps - 1, mesh_size))
+
+# Compute probability density for predicted_Psi
+predicted_Density = np.abs(predicted_Psi * np.conj(predicted_Psi))
+
 # Planck's constant is set to 1
 mass = 0.5  # Mass of the particle
 
