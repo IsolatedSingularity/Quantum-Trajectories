@@ -1,5 +1,5 @@
 # Quantum Trajectories Pilot Wave Theory
-###### Under the supervision of [Professor Ivan Ivanov](https://euclid.vaniercollege.qc.ca/~iti/) at [Vanier College].
+###### Under the supervision of [Professor Ivan Ivanov](https://euclid.vaniercollege.qc.ca/~iti/) at [Vanier College](https://www.vaniercollege.qc.ca/).
 
 ![alt text](https://github.com/IsolatedSingularity/Quantum-Trajectories/blob/main/Plots/RectangularPotentialWell.png)
 
