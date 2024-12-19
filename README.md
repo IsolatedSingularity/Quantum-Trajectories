@@ -22,24 +22,24 @@ $$
 where:
 
 - $\(\mathbf{v}\)$: Velocity field of the particle.
-- \(S\): Action function obtained from the wavefunction \(\Psi = R e^{iS/\hbar}\).
+- $\(S\)$: Action function obtained from the wavefunction $\(\Psi = R e^{iS/\hbar}\)$.
 
-The Schrödinger equation describes the evolution of \(\Psi\):
+The Schrödinger equation describes the evolution of $\(\Psi\)$:
 
 $$
 i \hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \Psi + V \Psi,$$
 
-where \(V(x)\) is the potential energy function. Bohmian mechanics extends this by extracting trajectories from the velocity field:
+where $\(V(x)\)$ is the potential energy function. Bohmian mechanics extends this by extracting trajectories from the velocity field:
 
 $$
 x(t + \Delta t) = x(t) + v(x(t)) \Delta t.$$
 
-In tunneling scenarios, the particle’s trajectory depends on the energy \(E\) relative to the potential \(V(x)\):
+In tunneling scenarios, the particle’s trajectory depends on the energy \(E\) relative to the potential $\(V(x)\)$:
 
 - If \(E > V(x)\): The particle reflects.
 - If \(E < V(x)\): The particle tunnels through.
 
-The Crank-Nicolson method numerically solves the Schrödinger equation to compute the wavefunction \(\Psi\) at discrete time steps, while the RNN predicts future \(\Psi\) states for improved efficiency.
+The Crank-Nicolson method numerically solves the Schrödinger equation to compute the wavefunction $\(\Psi\)$ at discrete time steps, while the RNN predicts future $\(\Psi\)$ states for improved efficiency.
 
 ---
 
