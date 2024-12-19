@@ -21,7 +21,7 @@ $$
 
 where:
 
-- \(\mathbf{v}\): Velocity field of the particle.
+- $\(\mathbf{v}\)$: Velocity field of the particle.
 - \(S\): Action function obtained from the wavefunction \(\Psi = R e^{iS/\hbar}\).
 
 The Schrödinger equation describes the evolution of \(\Psi\):
