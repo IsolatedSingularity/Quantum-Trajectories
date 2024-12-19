@@ -24,7 +24,7 @@ where:
 - $\(\mathbf{v}\)$: Velocity field of the particle.
 - $\(S\)$: Action function obtained from the wavefunction $\(\Psi = R e^{iS/\hbar}\)$.
 
-The Schrödinger equation describes the evolution of $\(\Psi\)$:
+The Schrödinger equation describes the evolution of $$\Psi$$:
 
 $$
 i \hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m} \nabla^2 \Psi + V \Psi,$$
@@ -39,7 +39,7 @@ In tunneling scenarios, the particle’s trajectory depends on the energy \(E\) 
 - If \(E > V(x)\): The particle reflects.
 - If \(E < V(x)\): The particle tunnels through.
 
-The Crank-Nicolson method numerically solves the Schrödinger equation to compute the wavefunction $\(\Psi\)$ at discrete time steps, while the RNN predicts future $\(\Psi\)$ states for improved efficiency.
+The Crank-Nicolson method numerically solves the Schrödinger equation to compute the wavefunction $$\Psi$$ at discrete time steps, while the RNN predicts future $$\Psi$$ states for improved efficiency.
 
 ---
 
@@ -73,7 +73,7 @@ potential = np.array([V(x) for x in Xgrid])
 ```
 
 3. **Initial Wavefunction:**
-   - Initializes \(\Psi\) as a Gaussian distribution centered at \(\mu_0\).
+   - Initializes $\Psi$ as a Gaussian distribution centered at \(\mu_0\).
 
 ```python
 # Initial wavefunction
@@ -82,7 +82,7 @@ Psi = (1 / (2 * np.pi * sigma0**2)) * np.exp(1j * k0 * Xgrid - ((Xgrid - mu0) / 
 ```
 
 4. **Absorbing Boundary Conditions:**
-   - Implements Crank-Nicolson boundary conditions to stabilize \(\Psi\) near simulation edges.
+   - Implements Crank-Nicolson boundary conditions to stabilize $\Psi$ near simulation edges.
 
 ```python
 # Absorbing boundary conditions
@@ -91,7 +91,7 @@ U1 = sp.diags([-alpha, 1 + 2*alpha, -alpha], [-1, 0, 1], shape=(mesh_size, mesh_
 ```
 
 5. **Crank-Nicolson Integration:**
-   - Evolves \(\Psi\) over time using a sparse matrix solver.
+   - Evolves $\Psi$ over time using a sparse matrix solver.
 
 ```python
 # Time evolution of Psi
@@ -100,7 +100,7 @@ for t in range(time_steps - 1):
 ```
 
 6. **Recurrent Neural Network (RNN):**
-   - Trains an RNN to predict future \(\Psi\) states, reducing computational overhead.
+   - Trains an RNN to predict future $\Psi$ states, reducing computational overhead.
 
 ```python
 # Define RNN
